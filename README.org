@@ -1,0 +1,97 @@
+* Puppet vs. Chef vs. Ansible vs. SaltStack 
+
+[[https://www.intigua.com/blog/puppet-vs.-chef-vs.-ansible-vs.-saltstack][link]]
+
+
+
+** Puppet
+
+- Written in Ruby
+- Ruby DSL with usage of ERB
+- Declarative
+- Master/agent
+
+
+
+*** Pros
+
+- good reporting tools
+- good web ui
+- supports multiple OSs
+- good for large enterprises
+- A lot of CLI
+
+*** Cons
+
+- Difficult for non-rubyists
+- A lot of CLI
+- May be hard to scale?
+- Multiple masters can get complicated
+- Remote execution can be complicated
+- No push
+
+
+** Chef
+
+- Made by [[https://www.chef.io/][OpsCode]]
+- Client-server architecture
+- Ruby DSL
+
+
+
+*** Pros
+
+- Flexible 
+- Good documentation
+- Stable
+- Reporting
+
+*** Cons
+
+- Steep learning curve
+- Initial setup be complicated
+- No push
+- Docs can be hard to follow
+
+
+** Ansible
+
+- Python based
+- Imperative
+- Multiple push
+  
+*** Pros
+
+- Easy to pick up
+- Can scale rapidly
+- Easy installation
+- Sequential execution order
+- Push and pull models
+- Faster than master-agent model
+- No master
+- Probably better for personal projects
+
+*** Cons
+
+- Focused on orchestration
+- No master
+- Might be hard to scale with ssh
+- Needs python installed on server
+- Not as mature as others
+
+** SaltStack
+
+
+*** Pros:
+
+- Can scale ? 
+- Easy to pick up
+- Python based
+- Probably better for usage in industry
+
+*** Cons
+
+- installation can be difficult
+- Docs can be hard to read
+- No good UI
+- Not good for non-linux systems
