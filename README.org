@@ -1,3 +1,26 @@
+* AWS
+
+** SQS vs SNS
+
+
+
+|---------------------+-----------------------------------------+--------------------------------------------------|
+|                     | SQS (Simple Queuing Service)            | SNS (Simple Notification Service)                |
+|---------------------+-----------------------------------------+--------------------------------------------------|
+| Type                | Queue                                   | Topic (Pub/Sub system)                           |
+|---------------------+-----------------------------------------+--------------------------------------------------|
+| Message consumption | Pull                                    | Push                                             |
+|---------------------+-----------------------------------------+--------------------------------------------------|
+| Use Case            | Decoupling applictions                  | Fanout                                           |
+|                     | Parallel asych processsing              | Processing same message different ways           |
+|---------------------+-----------------------------------------+--------------------------------------------------|
+| Persistence         | Configurable                            | None                                             |
+|                     | Persisted for some time                 |                                                  |
+|---------------------+-----------------------------------------+--------------------------------------------------|
+| Consumer Type       | Consumers are supposed to be identical. | Consumers can process messages in different ways |
+|                     |                                         |                                                  |
+|---------------------+-----------------------------------------+--------------------------------------------------|
+
 * Puppet vs. Chef vs. Ansible vs. SaltStack 
 
 [[https://www.intigua.com/blog/puppet-vs.-chef-vs.-ansible-vs.-saltstack][link]]
