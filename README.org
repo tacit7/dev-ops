@@ -37,24 +37,43 @@ is strictly preserved Exactly-once delivery
 ** Kinesis
 
 
-
 #+BEGIN_SRC plantuml :file ./img/kinesis.png
-[First component]
-[Another component] as Comp2  
-component Comp3
-component [Last\ncomponent] as Comp4
+package "Amazon Kinesis"{
+[Kinesis Streams] as Streams
+[Kinesis Analytics] as Analytics
+[Kinesis Firehose] as Firehose
+}
+[Click Streams] --> Streams
+[IoT Devices] --> Streams
+[Metrics/logs] --> Streams
+
+Streams --> Analytics
+Analytics --> Firehose
+
+Firehose --> [Amazon S3 Bucket]
+Firehose --> [Amazon Redshift]
 #+END_SRC
+
+#+RESULTS:
+[[file:./img/kinesis.png]]
 
 [[https://github.com/tacit7/dev-ops/blob/master/img/kinesis.png]] 
 
-[[./img/kinesis.png][img]]
 
+*** Streams
+- Divided into partitions
+- Can retain data from one day up to seven days
+- Can have multiple consumers
+- Real-time processing
+- Immutable data
 
-[Click Streams]
-
-[IoT Devices]
-
-[Metrics/Logs]
+*** Shards
+- a stream has many shards
+- 1 MB/s or 1000 messages at write *per shard*
+- 2 MB/s at *read per shard*
+- Billed per shard 
+- Users can have unlimited shards
+- Messages are ordered per shard
 * Puppet vs. Chef vs. Ansible vs. SaltStack
 
 [[https://www.intigua.com/blog/puppet-vs.-chef-vs.-ansible-vs.-saltstack][link]]
