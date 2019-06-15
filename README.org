@@ -18,8 +18,21 @@
 |                     | Persisted for some time                 |                                                  |
 |---------------------+-----------------------------------------+--------------------------------------------------|
 | Consumer Type       | Consumers are supposed to be identical. | Consumers can process messages in different ways |
-|                     |                                         |                                                  |
 |---------------------+-----------------------------------------+--------------------------------------------------|
+
+
+** SQS
+
+Amazon Simple Queue Service (SQS) is a highly scalable distributed message
+queuing service provided by Amazon.
+
+There are two types of queues
+
+- Standard :: Nearly unlimited throughput with best-effort ordering. At-least-once delivery (You might get same message twice.)
+
+- FIFO :: Limited number of transactions per second (TPS). See Amazon SQS FIFO developer
+guide for more information on limits. Order in which messages are sent/received
+is strictly preserved Exactly-once delivery
 
 * Puppet vs. Chef vs. Ansible vs. SaltStack 
 
