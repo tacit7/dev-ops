@@ -46,7 +46,7 @@ component [Last\ncomponent] as Comp4
 #+END_SRC
 
 #+RESULTS:
-[[file:./img/kinesis.png]]
+ [[./img/kinesis.png][img]]
 
 
 [Click Streams]
