@@ -34,7 +34,27 @@ There are two types of queues
 guide for more information on limits. Order in which messages are sent/received
 is strictly preserved Exactly-once delivery
 
-* Puppet vs. Chef vs. Ansible vs. SaltStack 
+** Kinesis
+
+
+
+#+BEGIN_SRC plantuml :file ./img/kinesis.png
+[First component]
+[Another component] as Comp2  
+component Comp3
+component [Last\ncomponent] as Comp4
+#+END_SRC
+
+#+RESULTS:
+[[file:./img/kinesis.png]]
+
+
+[Click Streams]
+
+[IoT Devices]
+
+[Metrics/Logs]
+* Puppet vs. Chef vs. Ansible vs. SaltStack
 
 [[https://www.intigua.com/blog/puppet-vs.-chef-vs.-ansible-vs.-saltstack][link]]
 
@@ -77,7 +97,7 @@ is strictly preserved Exactly-once delivery
 
 *** Pros
 
-- Flexible 
+- Flexible
 - Good documentation
 - Stable
 - Reporting
@@ -95,7 +115,7 @@ is strictly preserved Exactly-once delivery
 - Python based
 - Imperative
 - Multiple push
-  
+
 *** Pros
 
 - Easy to pick up
@@ -120,7 +140,7 @@ is strictly preserved Exactly-once delivery
 
 *** Pros:
 
-- Can scale ? 
+- Can scale ?
 - Easy to pick up
 - Python based
 - Probably better for usage in industry
