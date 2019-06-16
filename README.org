@@ -1,5 +1,36 @@
 * AWS
+** Installing CLI
+[[https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html#install-bundle-macos][AWS CLI install instructions]]
 
+You can install python 3, but you have to specify the path when installing
+#+BEGIN_SRC sh
+brew install python
+PY_PATH =$(which python3)
+
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+sudo $PY_PATH awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+#+END_SRC
+
+
+Or if you already are using pip:
+
+#+BEGIN_SRC sh
+pip3 install awscli --upgrade --user
+#+END_SRC
+If you use pip you will need to add the aws path to your $PATH
+That should be something like:
+
+#+BEGIN_SRC sh
+$HOME/Library/Python/<python-version>/bin
+#+END_SRC
+
+Then configure the cli using your creds.
+#+BEGIN_SRC sh
+aws configure
+#+END_SRC
 ** SQS vs SNS
 
 
