@@ -1,4 +1,13 @@
+    
+
 * AWS
+** Resources
+[[https://tutorialsdojo.com/aws-cheat-sheet-aws-auto-scaling/][auto scaling cheat sheet]]
+[[https://serverless.com/][Create apps using serverless architecture]]
+
+- Use cloudguru for exams
+- Use linux academy for hands one
+- akamai
 ** Installing CLI
 [[https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html#install-bundle-macos][AWS CLI install instructions]]
 
@@ -6,7 +15,7 @@ You can install python 3, but you have to specify the path when installing
 #+BEGIN_SRC sh
 brew install python
 PY_PATH=$(which python3)
-
+  
 curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 unzip awscli-bundle.zip
 sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
@@ -105,6 +114,58 @@ Firehose --> [Amazon Redshift]
 - Billed per shard 
 - Users can have unlimited shards
 - Messages are ordered per shard
+
+
+** Terms
+
+- Route 54 :: Amazon Route 53 provides highly available and scalable Domain Name System (DNS), domain
+  name registration, and health-checking web services. With Amazon Route 53, you can create and manage
+  your public DNS records.
+
+  Akamai is more widely used.
+
+  [[https://aws.amazon.com/route53/faqs/][faqs]]
+  
+
+- <<<record set>>> :: 
+
+
+
+*** Record Sets                                               :DNS:ROUTE54:
+
+Some common record sets: [[https://ns1.com/resources/dns-types-records-servers-and-queries][link]]
+
+
+- Address Mapping record (A Record) :: AKA DNS host record, stores a hostname and its corresponding IPv4 address.
+
+- IP Version 6 Address record (AAAA Record) :: stores a hostname and its corresponding IPv6 address.
+
+- Canonical Name record (CNAME Record) :: used to alias a hostname to another hostname.
+  When a DNS client requests a record that contains a CNAME, which points to
+  another hostname, the DNS resolution process is repeated with the new
+     hostname.
+
+- Mail exchanger record (MX Record) :: specifies an SMTP email server for the domain, used to route 
+  outgoing emails to an email server.
+
+- Name Server records (NS Record) :: specifies that a DNS Zone, such as “example.com” is delegated to
+   a specific Authoritative Name Server, and provides the address of the name server.
+
+- Reverse-lookup Pointer records (PTR Record) :: allows a DNS resolver to provide an IP address and r
+  eceive a hostname (reverse DNS lookup).
+
+- Certificate record (CERT Record) :: stores encryption certificates—PKIX, SPKI, PGP, and so on
+  .
+
+- Service Location (SRV Record) :: a service location record, like MX but for other communication protocols
+  .
+
+- Text Record (TXT Record) :: typically carries machine-readable data such as opportunistic encryption, sen
+  der policy framework, DKIM, DMARC, etc.
+
+- Start of Authority (SOA Record) ::this record appears at the beginning of a DNS zone file, and indicates
+  the Authoritative Name Server for the current DNS zone, contact details for the domain administrator,
+  domain serial number, and information on how frequently DNS information for this zone should be refreshed.
 * Puppet vs. Chef vs. Ansible vs. SaltStack
 
 [[https://www.intigua.com/blog/puppet-vs.-chef-vs.-ansible-vs.-saltstack][link]]
@@ -202,3 +263,26 @@ Firehose --> [Amazon Redshift]
 - Docs can be hard to read
 - No good UI
 - Not good for non-linux systems
+
+
+
+
+
+
+* talks
+** Integrating Security Testing Into Your Container Build Pipeline 
+** Security best practices
+*** Use trusted imabes
+*** Scan images for CVEs
+*** specify user otherwise it will be set to root.
+
+** Image Security Tools
+*** Hadolint (For linting docker files)
+*** Trufflehob (secrets)
+*** Anchore (vulnerability's scanning)
+
+** Creds and secrets
+*** AWS has Parameter Store
+*** Secrets Manager
+*** You need to call them within pod on kubernetes
+*** Assign an IAM role
